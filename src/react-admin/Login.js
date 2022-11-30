@@ -6,7 +6,9 @@ import authProvider from './authProvider'
 import Cookies from './helpers/Cookies';
 import { BASE_PATH } from "../utils/contans";
 
-import { IngresoList, IngresoEdit, IngresoCreate } from './ingreso';
+import { VehiculoList, VehiculoEdit, VehiculoCreate } from "./vehiculo";
+import { ViajeList, ViajeEdit, ViajeCreate } from "./viaje";
+import { GastoList, GastoEdit, GastoCreate } from "./gasto";
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -21,12 +23,14 @@ const httpClient = (url, options = {}) => {
 
 const dataProvider = simpleRestProvider(BASE_PATH, httpClient);
 
-export default function Login(){
-    return(
+export default function Login() {
+    return (
         <div>
-        <Admin authProvider={authProvider} dataProvider={dataProvider}>
-            <Resource name="ingresos" list={IngresoList} edit={IngresoEdit} create={IngresoCreate} />
-        </Admin>
+            <Admin authProvider={authProvider} dataProvider={dataProvider}>
+                <Resource name="vehiculos" list={VehiculoList} edit={VehiculoEdit} create={VehiculoCreate} />
+                <Resource name="viajes" list={ViajeList} edit={ViajeEdit} create={ViajeCreate} />
+                <Resource name="gastos" list={GastoList} edit={GastoEdit} create={GastoCreate} />
+            </Admin>
         </div>
     )
 }

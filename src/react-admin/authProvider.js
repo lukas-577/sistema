@@ -5,10 +5,10 @@ export default {
 
     login: ({ username, password }) => {
         const identifier = username // strapi expects 'identifier' and not 'username'
-        const request = new Request(`${BASE_PATH}/auth/local'`, {
+        const request = new Request(`${BASE_PATH}/auth/local`, {
             method: 'POST',
             body: JSON.stringify({ identifier, password }),
-            headers: new Headers({ 'Content-Type': 'application/json'})
+            headers: new Headers({ 'Content-Type': 'application/json' })
         });
         return fetch(request)
             .then(response => {
