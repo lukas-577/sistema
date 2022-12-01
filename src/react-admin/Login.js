@@ -9,6 +9,7 @@ import { BASE_PATH } from "../utils/contans";
 import { VehiculoList, VehiculoEdit, VehiculoCreate } from "./vehiculo";
 import { ViajeList, ViajeEdit, ViajeCreate } from "./viaje";
 import { GastoList, GastoEdit, GastoCreate } from "./gasto";
+import { GanoList, GanoEdit, GanoCreate } from "./ganoApp";
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -30,6 +31,7 @@ export default function Login() {
                 <Resource name="vehiculos" list={VehiculoList} edit={VehiculoEdit} create={VehiculoCreate} />
                 <Resource name="viajes" list={ViajeList} edit={ViajeEdit} create={ViajeCreate} />
                 <Resource name="gastos" list={GastoList} edit={GastoEdit} create={GastoCreate} />
+                <Resource name="ganos" list={GanoList} edit={GanoEdit} create={GanoCreate} />
             </Admin>
         </div>
     )
