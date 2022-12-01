@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReferenceInput, BooleanInput, SelectInput, List, Datagrid, TextField, TextInput, Edit, Create, SimpleForm } from 'react-admin';
+import { ReferenceInput, BooleanInput, SelectInput, List, Datagrid, TextField, TextInput, Edit, Create, SimpleForm, ReferenceField } from 'react-admin';
 
 const vehiculoFilters = [
     <TextInput source="q" label="Search" alwaysOn />,
@@ -17,6 +17,9 @@ export const VehiculoList = (props) => (
             <TextField source="marca" />
             <TextField source="descripcion" />
             <TextField source="anio" />
+            <ReferenceField source="viaje_id" reference="viajes">
+                <TextField source="id" />
+            </ReferenceField>
         </Datagrid>
     </List>
 );
@@ -30,6 +33,9 @@ export const VehiculoEdit = props => (
             <TextInput source="marca" />
             <TextInput source="descripcion" />
             <TextInput source="anio" />
+            <ReferenceInput source="viaje_id" reference="viajes">
+                <SelectInput optionText="id" />
+            </ReferenceInput>
             <BooleanInput source="published" />
         </SimpleForm>
     </Edit>
@@ -45,6 +51,9 @@ export const VehiculoCreate = props => (
             <TextInput source="marca" />
             <TextInput source="descripcion" />
             <TextInput source="anio" />
+            <ReferenceInput source="viaje_id" reference="viajes">
+                <SelectInput optionText="id" />
+            </ReferenceInput>
             <BooleanInput source="published" />
         </SimpleForm>
     </Create>
