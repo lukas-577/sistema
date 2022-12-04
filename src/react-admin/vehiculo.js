@@ -21,6 +21,12 @@ export const VehiculoList = (props) => (
             <ReferenceField source="viaje.id" reference="viajes">
                 <TextField source="origen" />
             </ReferenceField>
+            <ReferenceField source="gasto.id" reference="gastos">
+                <TextField source="descripcion" />
+            </ReferenceField>
+            <ReferenceField source="ganancia.id" reference="ganancias">
+                <TextField source="id" />
+            </ReferenceField>
         </Datagrid>
     </List>
 );
@@ -37,6 +43,12 @@ export const VehiculoEdit = props => (
             <TextInput source="kilometros_litro" />
             <ReferenceInput source="viaje.id" reference="viajes">
                 <SelectInput optionText="origen" />
+            </ReferenceInput>
+            <ReferenceInput source="gasto.id" reference="gastos">
+                <SelectInput optionText="descripcion" />
+            </ReferenceInput>
+            <ReferenceInput source="ganancia.id" reference="ganancias">
+                <SelectInput optionText="id" />
             </ReferenceInput>
             <BooleanInput source="published" />
         </SimpleForm>
@@ -56,6 +68,12 @@ export const VehiculoCreate = props => (
             <TextInput source="kilometros_litro" />
             <ReferenceInput source="viaje.id" reference="viajes">
                 <SelectInput optionText="origen" />
+            </ReferenceInput>
+            <ReferenceInput source="gasto.id" reference="gastos">
+                <SelectInput optionText="descripcion" />
+            </ReferenceInput>
+            <ReferenceInput source="ganancia.id" reference="ganancias">
+                <SelectInput optionText="id" />
             </ReferenceInput>
             <BooleanInput source="published" />
         </SimpleForm>
