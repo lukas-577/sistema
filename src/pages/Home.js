@@ -1,6 +1,7 @@
 import { BASE_PATH } from "../utils/contans";
 import { useEffect, useState } from "react";
 import VehiculosText from "../componets/VehiculosText";
+import Navbar1 from "../componets/Navbar1";
 
 export default function Home() {
 
@@ -19,8 +20,8 @@ export default function Home() {
 
 
     return (
-        <div>
-            <h1>Estamos en la home</h1>
+        <div className="my-5">
+            <Navbar1></Navbar1>
             <VehiculosText VehiculosText={img}></VehiculosText>
         </div>
     )
